@@ -5,7 +5,7 @@ import axios from "axios";
 function Home() {
     return (
         <div>
-            <h3>New date published</h3>
+            <h3>New post</h3>
             <button onClick={() => handleTriggerClicked(0)}>Activate trigger</button>
             <br/>
             <h3>New post added</h3>
@@ -17,10 +17,13 @@ function Home() {
 function getData(index) {
     let data = [];
     data[0] = JSON.stringify({
-        name: "New date",
-        userId: "637fca83e390fb1412654658",
+        name: "New post",
+        userId: "638520b081129c0dae14f4e3",
         typeId: "637e8c10e390fb141265464b",
-        fields: [{"type":"date", "name":"date", "value":"yyyy-mm-ddT00:00:00.000Z"}]
+        fields: [{"type":"date", "name":"date", "value":"yyyy-mm-ddT00:00:00.000Z"},
+                {"type":"title", "name":"title", "value":"My first post"},
+                {"type":"content", "name":"content", "value":"description"},
+                {"type":"userinfo", "name":"userinfo", "value":null}]
     });
 
     data[1] = JSON.stringify({
@@ -28,7 +31,9 @@ function getData(index) {
         userId: "637fca83e390fb1412654658",
         typeId: "637e8c10e390fb141265464b",
         fields: [{"type":"title", "name":"title", "value":"New baby born!!!"},
-                {"type":"description", "name":"description", "value":"Finally this day has arrived. My baby son is born"}]
+                {"type":"content", "name":"content", "value":"Finally this day has arrived. My baby son is born"},
+                {"type":"date", "name":"date", "value":"22.10.2022."},
+                {"type":"userinfo", "name":"userinfo", "value":null}]
     });
 
     return data[index];
