@@ -18,7 +18,7 @@ function getData(index) {
     let data = [];
     data[0] = JSON.stringify({
         name: "New post",
-        userId: "638520b081129c0dae14f4e3",
+        userId: "63bc3d4acce0221b1d4df7d4",
         typeId: "637e8c10e390fb141265464b",
         fields: [{"type":"date", "name":"date", "value":"yyyy-mm-ddT00:00:00.000Z"},
                 {"type":"title", "name":"title", "value":"My first post"},
@@ -42,7 +42,7 @@ function getData(index) {
 async function handleTriggerClicked(index) {
     console.log("uspjeh");
     const triggerData = getData(index);
-    const result = await axios.post('http://localhost:8080/trigger/occurrence', triggerData, {
+    const result = await axios.post('http://privtap-bucket.s3-website.eu-central-1.amazonaws.com/trigger/occurrence', triggerData, {
         headers: {
             'Content-Type': 'application/json; charset=utf-8'
         }
